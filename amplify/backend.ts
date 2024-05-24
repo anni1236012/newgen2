@@ -18,7 +18,7 @@ const lambdaAccess = backend.sayHello.resources.lambda.functionArn;
 const authDetails =
   backend.auth.resources.authenticatedUserIamRole.addToPrincipalPolicy(
     new PolicyStatement({
-      actions: ["lambda:InvokeFunction"],
+      actions: ["lambda:InvokeFunction", "lambda:InvokeFunctionUrl"],
       resources: [lambdaAccess],
     })
   );
